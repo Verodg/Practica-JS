@@ -167,6 +167,7 @@ function getNumber() {
     //Eliminar un alumno aleatoriamente de la clase.
         case 5:
           let randomNumberstudent = calculateRandomNumber(0, students.length - 1)
+
           console.log('Has eliminado aleatoriamente a: ', students.splice(randomNumberstudent, 1))
           break;
 
@@ -222,9 +223,12 @@ function getNumber() {
           break;
   
       // Mostrar por consola el nombre de la persona más joven de la clase.
-        // Revisarcase 11:
+        // Revisar
+        case 11:
+        let youngerStudent = students.reduce((accum, value) => accum.age < value.age ? accum : value);
 
-  
+        console.log('El alumn@ más joven es: ', youngerStudent);
+        break;
 
     //Mostrar por consola la edad media de todos los alumnos de la clase.
   
@@ -254,12 +258,20 @@ function getNumber() {
           break;
           
 
-      //Ordenar el array de alumnos alfabéticamente según su nombre
+      //Ordenar el array de alumnos alfabéticamente según su nombre. Revisar
         case 15:
           let alphaStudents = students.sort((a,b) => (a.name > b.name) ? 1 : -1); 
           console.log(alphaStudents)
           break;
 
+
+
+      //16- Mostrar por consola el alumno de la clase con las mejores notas.
+      //El alumno con mejores notas es aquel cuyo sumatorio de todas sus notas es el valor más alto de todos.
+          
+      //17- Mostrar por consola la nota media más alta de la clase y el nombre del alumno al que pertenece.
+          
+      /// 18- Añadir un punto extra a cada nota existente de todos los alumnos. Recordad que la nota máxima posible es 10. Si los alumnos aún no tienen registrada ninguna nota, les pondremos un 10.
 
       // Cerramos el juego con rl.close
         default:
@@ -270,3 +282,4 @@ function getNumber() {
   }
   
   runGame();
+
